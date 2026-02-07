@@ -6,95 +6,178 @@
     <title>Nate Hughes | Senior Software Engineer</title>
     <style>
         :root {
-            --primary: #2d3e50;
-            --secondary: #e74c3c;
-            --bg: #f4f7f6;
-            --text: #333;
-            --light-text: #666;
-            --white: #ffffff;
+            /* Dark Theme Variables */
+            --primary: #64ffda; /* Cyan/Teal accent */
+            --secondary: #8892b0; /* Slate text */
+            --bg: #0a192f; /* Navy background */
+            --card-bg: #112240; /* Light Navy */
+            --text: #ccd6f6; /* Lightest Slate */
+            --heading: #e6f1ff; /* White-ish */
+            --link: #64ffda;
+            --border: #233554;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            font-size: 16px;
         }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 25px;
         }
+
         header {
-            background-color: var(--white);
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            padding: 80px 0 50px;
+            text-align: left;
         }
+
         h1 {
-            color: var(--primary);
-            margin: 0;
-            font-size: 2.5em;
+            color: var(--heading);
+            margin: 0 0 10px 0;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
+
         h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 10px;
-            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            color: var(--heading);
+            font-size: 1.8rem;
+            margin: 40px 0 30px;
+            width: 100%;
+            white-space: nowrap;
         }
+
+        h2::after {
+            content: "";
+            display: block;
+            position: relative;
+            top: 2px;
+            width: 300px; /* Line width */
+            height: 1px;
+            margin-left: 20px;
+            background-color: var(--border);
+        }
+
         .subtitle {
-            color: var(--light-text);
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        .contact-info {
-            margin-top: 15px;
-            font-size: 0.9em;
-        }
-        .section {
-            background: var(--white);
-            padding: 30px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 400;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
         }
+
+        .contact-info {
+            color: var(--secondary);
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
         .job {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--card-bg);
+            border-radius: 6px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
+
+        .job:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
         .job-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: center;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
+
         .job-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: var(--primary);
-        }
-        .job-company {
-            color: var(--secondary);
+            color: var(--heading);
+            font-size: 1.3rem;
             font-weight: 600;
         }
+
+        .job-company {
+            color: var(--primary);
+        }
+
         .job-date {
-            color: var(--light-text);
-            font-size: 0.9em;
+            color: var(--secondary);
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            font-size: 0.85rem;
         }
-        .patent-box {
-            background-color: #f9f9f9;
-            border-left: 4px solid var(--secondary);
-            padding: 15px;
-            margin-top: 10px;
-        }
+
         ul {
             padding-left: 20px;
+            margin: 0;
         }
-        @media (max-width: 600px) {
-            .job-header {
-                flex-direction: column;
-            }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            list-style: none;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: -20px;
+            color: var(--primary);
+        }
+
+        .patent-box {
+            background-color: var(--card-bg);
+            border-left: 3px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            max-width: 600px;
+            color: var(--secondary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            h2::after { width: 100%; }
+            .job-header { flex-direction: column; align-items: flex-start; gap: 5px; }
         }
     </style>
 </head>
@@ -102,10 +185,15 @@
 
 <header>
     <div class="container">
-        <h1>Nate Hughes</h1>
-        <div class="subtitle">Senior Software Engineer | High-Performance & Scalable Distributed Systems</div>
-        <div class="contact-info">
-            Austin, Texas, United States • <a href="https://www.linkedin.com/in/nathaniel-joseph-hughes/">LinkedIn</a>
+        <div style="color: var(--primary); font-family: monospace; margin-bottom: 20px;">Hi, my name is</div>
+        <h1>Nate Hughes.</h1>
+        <div class="subtitle">I build high-performance distributed systems.</div>
+        <div class="intro-text">
+            I'm a Senior Software Engineer based in Austin, TX, specializing in backend microservices, cloud infrastructure (AWS/GCP), and scalable data pipelines. Currently building the future of ads and entity resolution at Amazon.
+        </div>
+        <div class="contact-info" style="margin-top: 30px;">
+            <a href="https://www.linkedin.com/in/nathaniel-joseph-hughes/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &nbsp;•&nbsp; 
+            <a href="mailto:contact@natehughes.dev">Get in Touch</a>
         </div>
     </div>
 </header>
@@ -113,8 +201,10 @@
 <div class="container">
 
     <div class="section">
-        <h2>About</h2>
-        <p>Senior Software Engineer with 10+ years of backend, microservices & cloud infra experience. Proven at delivering scalable solutions, resolving performance bottlenecks, and driving team productivity. Expert in Leadership, ETL, Go, and Kubernetes.</p>
+        <h2>About Me</h2>
+        <p class="intro-text">
+            With over 10 years of experience, I excel at delivering scalable solutions, optimizing performance bottlenecks (saving billions of API calls), and driving engineering excellence. My expertise spans <strong>Go</strong>, <strong>Kubernetes</strong>, and massive-scale <strong>ETL pipelines</strong>.
+        </p>
     </div>
 
     <div class="section">
@@ -122,89 +212,57 @@
 
         <div class="job">
             <div class="job-header">
-                <div><span class="job-title">Software Development Engineer II</span> @ <span class="job-company">Amazon</span></div>
+                <div><span class="job-title">Software Development Engineer II</span> <span class="job-company">@ Amazon</span></div>
                 <span class="job-date">Aug 2022 - Present</span>
             </div>
             <ul>
-                <li><strong>Amazon Advertising:</strong> Led a project to launch a new backend service for Ads Permission Delegation; personally designed and implemented the asynchronous permissions revocation system.</li>
-                <li><strong>Amazon Web Services (AWS):</strong> Delivered fundamental components to the AWS Entity Resolution service launch by designing and implementing its ETL pipeline and optimizing DynamoDB schemas and Spark execution for scalability.</li>
+                <li><strong>Amazon Advertising:</strong> Led the launch of a new backend service for Ads Permission Delegation; designed and implemented the asynchronous permissions revocation system.</li>
+                <li><strong>AWS Entity Resolution:</strong> Designed and implemented ETL pipelines, optimized DynamoDB schemas, and tuned Spark execution for a major AWS service launch.</li>
             </ul>
         </div>
 
         <div class="job">
             <div class="job-header">
-                <div><span class="job-title">Senior Software Engineer</span> @ <span class="job-company">IBM</span></div>
+                <div><span class="job-title">Senior Software Engineer</span> <span class="job-company">@ IBM Cloud</span></div>
                 <span class="job-date">Aug 2021 - Sep 2022</span>
             </div>
             <ul>
-                <li>Returned to IBM Cloud division. Rewrote the Kubernetes etcd operator, significantly improving API server stability and saving an estimated one billion API calls annually.</li>
-                <li>Led an initiative to explore real-time, on-disk etcd persistence to optimize control plane recovery.</li>
+                <li>Rewrote the Kubernetes etcd operator, improving API server stability and saving ~1 billion API calls/year.</li>
+                <li>Led initiative to explore real-time, on-disk etcd persistence for control plane recovery optimization.</li>
             </ul>
         </div>
 
         <div class="job">
             <div class="job-header">
-                <div><span class="job-title">Senior Software Engineer</span> @ <span class="job-company">Mevi</span></div>
+                <div><span class="job-title">Senior Software Engineer</span> <span class="job-company">@ Mevi</span></div>
                 <span class="job-date">May 2020 - Aug 2021</span>
             </div>
             <ul>
-                <li>Led a small team in developing the Mevi Smart Contract engine and APIs, crucial for investor demonstrations.</li>
-                <li>Developed a deal timeline API and an asynchronous notification service for in-app updates.</li>
+                <li>Led development of Smart Contract engine and APIs, critical for Series A funding demos.</li>
+                <li>Built deal timeline API and asynchronous notification service for real-time app updates.</li>
             </ul>
         </div>
 
         <div class="job">
             <div class="job-header">
-                <div><span class="job-title">Instructional Associate</span> @ <span class="job-company">Georgia Institute of Technology</span></div>
-                <span class="job-date">May 2020 - Aug 2025 (Part-time)</span>
-            </div>
-            <ul>
-                <li>Supported a master’s course on databases; graded projects, hosted office hours, and mentored students.</li>
-                <li>Previously Teaching Assistant (Sep 2019 - May 2020).</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Backend Software Engineer</span> @ <span class="job-company">Pendo.io</span></div>
+                <div><span class="job-title">Backend Software Engineer</span> <span class="job-company">@ Pendo.io</span></div>
                 <span class="job-date">May 2018 - Sep 2019</span>
             </div>
             <ul>
-                <li>Developed a new API for the in-app guidance product, improving customer trust via data integrity.</li>
-                <li>Successfully lift-and-shifted a new acquisition's infrastructure and integrated their APIs into Pendo.</li>
+                <li>Developed new in-app guidance API, enhancing data integrity and customer trust.</li>
+                <li>Executed "lift-and-shift" of acquired infrastructure, integrating external APIs into Pendo ecosystem.</li>
             </ul>
         </div>
 
         <div class="job">
             <div class="job-header">
-                <div><span class="job-title">Software Engineer</span> @ <span class="job-company">IBM</span></div>
+                <div><span class="job-title">Software Engineer</span> <span class="job-company">@ IBM</span></div>
                 <span class="job-date">Jan 2016 - May 2018</span>
             </div>
             <ul>
-                <li>Automated DataPower deployments into API Connect environments, saving 50 development days per year (Promoted role).</li>
-                <li>Developed an observability system for production API Connect, providing periodic reports on API error trends.</li>
+                <li>Automated DataPower deployments to API Connect, saving 50 development days/year (Promoted role).</li>
+                <li>Built observability system for production API Connect error trending.</li>
             </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Software Development Engineer Intern</span> @ <span class="job-company">Mozilla</span></div>
-                <span class="job-date">May 2015 - Aug 2015</span>
-            </div>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Software Development Engineer Intern</span> @ <span class="job-company">SLB</span></div>
-                <span class="job-date">May 2014 - Aug 2014</span>
-            </div>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Datacenter Technician Intern</span> @ <span class="job-company">Meta</span></div>
-                <span class="job-date">May 2012 - Jan 2013</span>
-            </div>
         </div>
     </div>
 
@@ -212,35 +270,35 @@
         <h2>Education</h2>
         <div class="job">
             <div class="job-header">
-                <div><span class="job-title">Master of Science (MS), Computer Science</span></div>
-                <span class="job-company">Georgia Institute of Technology</span>
+                <span class="job-title">Georgia Institute of Technology</span>
+                <span class="job-date">2019 – 2020</span>
             </div>
-            <div class="job-date">Sep 2019 – May 2020</div>
+            <div>Master of Science (MS), Computer Science</div>
+            <div style="margin-top: 10px; font-size: 0.9em; color: var(--secondary);">Also served as Instructional Associate (TA) for Database Systems (2020-2025).</div>
         </div>
         <div class="job">
             <div class="job-header">
-                <div><span class="job-title">Bachelor of Science (BS), Computer Engineering</span></div>
-                <span class="job-company">Virginia Tech</span>
+                <span class="job-title">Virginia Tech</span>
+                <span class="job-date">2013 – 2015</span>
             </div>
-            <div class="job-date">Aug 2013 – Dec 2015</div>
-        </div>
-        <div class="job">
-            <div class="job-header">
-                <div><span class="job-title">Associate of Science (AS), Electrical Engineering</span></div>
-                <span class="job-company">Northern Virginia Community College</span>
-            </div>
-            <div class="job-date">Aug 2011 – Aug 2013</div>
+            <div>Bachelor of Science (BS), Computer Engineering</div>
         </div>
     </div>
 
     <div class="section">
         <h2>Patents</h2>
         <div class="patent-box">
-            <strong>Optimal Surface Temperature Management (US 10,985,692 B2)</strong><br>
-            <em>Issued Apr 20, 2021</em><br>
-            A system and method for heating a surface (e.g., solar panel) to remove accumulated material like snow or dust, calculating energy production vs. cleaning cost.
+            <div style="color: var(--heading); font-weight: bold; margin-bottom: 5px;">Optimal Surface Temperature Management</div>
+            <div style="font-family: monospace; color: var(--primary); font-size: 0.9rem; margin-bottom: 10px;">US 10,985,692 B2 • Issued Apr 2021</div>
+            <p style="margin: 0; font-size: 0.95rem;">
+                A system and method for heating a surface (e.g., solar panel) to remove accumulated material like snow or dust, calculating energy production vs. cleaning cost.
+            </p>
         </div>
     </div>
+
+    <footer style="text-align: center; padding: 50px 0; color: var(--secondary); font-size: 0.8rem; font-family: monospace;">
+        Built by Lil Sebastian 🐴
+    </footer>
 
 </div>
 
