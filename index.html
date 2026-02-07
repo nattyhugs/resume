@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nate Hughes | Senior Software Engineer</title>
+    <style>
+        :root {
+            --primary: #2d3e50;
+            --secondary: #e74c3c;
+            --bg: #f4f7f6;
+            --text: #333;
+            --light-text: #666;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--primary);
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .subtitle {
+            color: var(--light-text);
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .section {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .job {
+            margin-bottom: 25px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--primary);
+        }
+        .job-company {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        .job-date {
+            color: var(--light-text);
+            font-size: 0.9em;
+        }
+        .patent-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin-top: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        @media (max-width: 600px) {
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Nate Hughes</h1>
+        <div class="subtitle">Senior Software Engineer | High-Performance & Scalable Distributed Systems</div>
+        <div class="contact-info">
+            Austin, Texas, United States • <a href="https://www.linkedin.com/in/nathaniel-joseph-hughes/">LinkedIn</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="section">
+        <h2>About</h2>
+        <p>Senior Software Engineer with 10+ years of backend, microservices & cloud infra experience. Proven at delivering scalable solutions, resolving performance bottlenecks, and driving team productivity. Expert in Leadership, ETL, Go, and Kubernetes.</p>
+    </div>
+
+    <div class="section">
+        <h2>Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Software Development Engineer II</span> @ <span class="job-company">Amazon</span></div>
+                <span class="job-date">Aug 2022 - Present</span>
+            </div>
+            <ul>
+                <li><strong>Amazon Advertising:</strong> Led a project to launch a new backend service for Ads Permission Delegation; personally designed and implemented the asynchronous permissions revocation system.</li>
+                <li><strong>Amazon Web Services (AWS):</strong> Delivered fundamental components to the AWS Entity Resolution service launch by designing and implementing its ETL pipeline and optimizing DynamoDB schemas and Spark execution for scalability.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Senior Software Engineer</span> @ <span class="job-company">IBM</span></div>
+                <span class="job-date">Aug 2021 - Sep 2022</span>
+            </div>
+            <ul>
+                <li>Returned to IBM Cloud division. Rewrote the Kubernetes etcd operator, significantly improving API server stability and saving an estimated one billion API calls annually.</li>
+                <li>Led an initiative to explore real-time, on-disk etcd persistence to optimize control plane recovery.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Senior Software Engineer</span> @ <span class="job-company">Mevi</span></div>
+                <span class="job-date">May 2020 - Aug 2021</span>
+            </div>
+            <ul>
+                <li>Led a small team in developing the Mevi Smart Contract engine and APIs, crucial for investor demonstrations.</li>
+                <li>Developed a deal timeline API and an asynchronous notification service for in-app updates.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Instructional Associate</span> @ <span class="job-company">Georgia Institute of Technology</span></div>
+                <span class="job-date">May 2020 - Aug 2025 (Part-time)</span>
+            </div>
+            <ul>
+                <li>Supported a master’s course on databases; graded projects, hosted office hours, and mentored students.</li>
+                <li>Previously Teaching Assistant (Sep 2019 - May 2020).</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Backend Software Engineer</span> @ <span class="job-company">Pendo.io</span></div>
+                <span class="job-date">May 2018 - Sep 2019</span>
+            </div>
+            <ul>
+                <li>Developed a new API for the in-app guidance product, improving customer trust via data integrity.</li>
+                <li>Successfully lift-and-shifted a new acquisition's infrastructure and integrated their APIs into Pendo.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Software Engineer</span> @ <span class="job-company">IBM</span></div>
+                <span class="job-date">Jan 2016 - May 2018</span>
+            </div>
+            <ul>
+                <li>Automated DataPower deployments into API Connect environments, saving 50 development days per year (Promoted role).</li>
+                <li>Developed an observability system for production API Connect, providing periodic reports on API error trends.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Software Development Engineer Intern</span> @ <span class="job-company">Mozilla</span></div>
+                <span class="job-date">May 2015 - Aug 2015</span>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Software Development Engineer Intern</span> @ <span class="job-company">SLB</span></div>
+                <span class="job-date">May 2014 - Aug 2014</span>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Datacenter Technician Intern</span> @ <span class="job-company">Meta</span></div>
+                <span class="job-date">May 2012 - Jan 2013</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Master of Science (MS), Computer Science</span></div>
+                <span class="job-company">Georgia Institute of Technology</span>
+            </div>
+            <div class="job-date">Sep 2019 – May 2020</div>
+        </div>
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Bachelor of Science (BS), Computer Engineering</span></div>
+                <span class="job-company">Virginia Tech</span>
+            </div>
+            <div class="job-date">Aug 2013 – Dec 2015</div>
+        </div>
+        <div class="job">
+            <div class="job-header">
+                <div><span class="job-title">Associate of Science (AS), Electrical Engineering</span></div>
+                <span class="job-company">Northern Virginia Community College</span>
+            </div>
+            <div class="job-date">Aug 2011 – Aug 2013</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Patents</h2>
+        <div class="patent-box">
+            <strong>Optimal Surface Temperature Management (US 10,985,692 B2)</strong><br>
+            <em>Issued Apr 20, 2021</em><br>
+            A system and method for heating a surface (e.g., solar panel) to remove accumulated material like snow or dust, calculating energy production vs. cleaning cost.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
